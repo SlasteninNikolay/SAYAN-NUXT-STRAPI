@@ -1,7 +1,7 @@
 name: GOL-VUE-Strapi-prod
 
 services:
-  camps-cms:
+  sayan-cms:
     build:
       context: ../cms
       dockerfile: ../prod-config/Dockerfile.cms
@@ -11,7 +11,7 @@ services:
       - strapi_uploads:/usr/app/public/uploads
     restart: unless-stopped
     networks:
-      - campsnet
+      - sayannet
     # Для Portainer (убрать если используется .env)
     env_file:
       - stack.env
@@ -26,16 +26,16 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_HOST: camps-db
+      DATABASE_HOST: sayan-db
       DATABASE_CLIENT: mysql
       DATABASE_PORT: 3306
       DATABASE_SSL: "false"
       NODE_ENV: production
     depends_on:
-      camps-db:
+      sayan-db:
         condition: service_healthy
 
-  camps-frontend:
+  sayan-frontend:
     build:
       context: ../frontend
       dockerfile: ../prod-config/Dockerfile.frontend
@@ -50,9 +50,9 @@ services:
       - stack.env
     restart: unless-stopped
     networks:
-      - campsnet
+      - sayannet
 
-  camps-db:
+  sayan-db:
     image: mysql:8.0
     restart: unless-stopped
     ports:
@@ -67,7 +67,7 @@ services:
     volumes:
       - db:/var/lib/mysql
     networks:
-      - campsnet
+      - sayannet
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u${DATABASE_USERNAME}", "-p${DATABASE_PASSWORD}" ]
       timeout: 20s
@@ -76,7 +76,7 @@ services:
       interval: 10s
 
 networks:
-  campsnet:
+  sayannet:
     driver: bridge
 
 volumes:

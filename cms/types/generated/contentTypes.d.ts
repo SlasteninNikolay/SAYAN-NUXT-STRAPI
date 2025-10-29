@@ -445,6 +445,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'page.blok-organizacziya-meropriyatij',
         'page.blok-uchebnye-korpusa',
         'page.blok-s-kartoj',
+        'page.pervyj-ekran-malyj',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

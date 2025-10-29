@@ -1,4 +1,4 @@
-name: CAMPS-NUXT-Strapi
+name: SAYAN-NUXT-Strapi
 services:
   fronted:
     build: 

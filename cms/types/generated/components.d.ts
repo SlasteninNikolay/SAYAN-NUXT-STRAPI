@@ -271,6 +271,19 @@ export interface PagePervyjEkran extends Struct.ComponentSchema {
   };
 }
 
+export interface PagePervyjEkranMalyj extends Struct.ComponentSchema {
+  collectionName: 'components_page_pervyj_ekran_malyj_s';
+  info: {
+    displayName: '\u041F\u0435\u0440\u0432\u044B\u0439 \u044D\u043A\u0440\u0430\u043D (\u043C\u0430\u043B\u044B\u0439)';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    header: Schema.Attribute.Component<'page.zagolovok', false>;
+    images: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface PageSeo extends Struct.ComponentSchema {
   collectionName: 'components_page_seos';
   info: {
@@ -368,6 +381,7 @@ declare module '@strapi/strapi' {
       'page.nomera': PageNomera;
       'page.opczii': PageOpczii;
       'page.pervyj-ekran': PagePervyjEkran;
+      'page.pervyj-ekran-malyj': PagePervyjEkranMalyj;
       'page.seo': PageSeo;
       'page.ssylka': PageSsylka;
       'page.taby': PageTaby;
