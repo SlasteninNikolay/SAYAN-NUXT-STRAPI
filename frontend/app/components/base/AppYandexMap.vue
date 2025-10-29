@@ -43,7 +43,7 @@ const customization = shallowRef([
 </script>
 
 <template>
-  <YMap class="rounded-lg" :settings="mapSettings" width="100%" height="480px">
+  <YMap class="rounded-lg border border-primary overflow-hidden" :settings="mapSettings" width="100%" height="480px">
     <YandexMapDefaultSchemeLayer :settings="{ customization }" />
     <YandexMapDefaultFeaturesLayer />
     <YandexMapMarker

@@ -20,20 +20,21 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
     <div class="container">
       <div class="flex flex-col gap-4 mb-12">
         <h2 class="heading relative text-[clamp(1.2rem,4vw,2rem)] uppercase font-medium text-white text-balance">{{ header?.title }}</h2>
-        <div class="max-w-2xl text-base text-white/50 font-light text-balance" v-if="description" v-html="htmlDescription"></div>
+        <div class="text-base text-white/50 font-light text-balance" v-if="description" v-html="htmlDescription"></div>
         <div class="flex gap-4">
-          <span  v-for="feature in features" :key="feature.id" class="text-sm text-primary/80 leading-none px-2 py-1 rounded-lg" :class="`bg-${feature.theme}`">
+          <span  v-for="feature in features" :key="feature.id" class="text-sm text-primary/80 leading-none px-2 py-1 rounded-lg opacity-80" :class="`bg-${feature.theme}`">
             {{ feature.title }}
           </span>
         </div>
       </div>
       <div class="">
-        <app-slider :slidesPerView="3" :effect="fade" class="w-full h-full max-h-96" >
+        <app-slider :slidesPerView="4" :effect="fade" class="w-full h-full max-h-96" >
           <app-slider-image
               v-for="photo in images"
               :key="photo.id"
               :src="getStrapiMedia(photo.url)"
               :alt="photo.alternativeText"
+              class="rounded-lg overflow-hidden max-h-[220px]"
           />
         </app-slider>
       </div>

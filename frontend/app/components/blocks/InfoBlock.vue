@@ -18,7 +18,7 @@
         <!--   /right part    -->
       </div>
       <!--   /info   -->
-      <div class="grid grid-cols-4 gap-10 mt-28">
+      <div class="grid gap-10 mt-28" :class="`grid-cols-${cards.length}`">
         <app-card
             v-for="card in cards"
             :key="card.id"

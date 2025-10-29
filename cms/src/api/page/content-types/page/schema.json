@@ -53,7 +53,9 @@
         "page.blok-organizacziya-meropriyatij",
         "page.blok-uchebnye-korpusa",
         "page.blok-s-kartoj",
-        "page.pervyj-ekran-malyj"
+        "page.pervyj-ekran-malyj",
+        "page.blok-o-lokaczii",
+        "page.blok-restoran"
       ]
     },
     "publish_at": {

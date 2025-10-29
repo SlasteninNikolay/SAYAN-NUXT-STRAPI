@@ -1,5 +1,5 @@
 <template>
-<header class="w-full">
+<header class="w-full bg-primary">
   <app-menu :menu-data="menuData" />
 </header>
 </template>

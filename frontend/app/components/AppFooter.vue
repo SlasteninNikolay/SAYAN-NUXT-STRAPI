@@ -47,21 +47,11 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
 </script>
 
 <template>
-  <footer class="w-full bg-primary text-white">
+  <footer class="w-full bg-primary text-secondary">
     <div class="container mx-auto py-16 px-4">
       <div class="grid grid-cols-3">
-        <div class="grid grid-cols-2">
-          <ul v-for="(col, idx) in columns" :key="idx">
-            <li v-for="item in col" :key="item?.id">
-              <NuxtLink
-                  :to="item?.url"
-                  class="block px-3 py-2 text-white font-medium hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200"
-              >{{ item?.title }}</NuxtLink>
-            </li>
-          </ul>
-        </div>
-        <div class="flex flex-col items-center justify-center w-full">
-          <div class="flex flex-col items-center justify-center w-full mb-4">
+        <div class="flex flex-col items-start justify-center w-full">
+          <div class="flex flex-col items-start justify-center w-full mb-4">
             <NuxtLink
                 to="/">
               <img
@@ -74,21 +64,29 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
                   decoding="async"
               />
             </NuxtLink>
-            <p class="mt-4 text-sm text-white/80 text-center text-balance">г. Саяногорск, Центральный мкр.,50</p>
+            <p class="mt-4 text-sm text-secondary/50 text-center text-balance">г. Саяногорск, Центральный мкр.,50</p>
           </div>
-          <div class="mt-auto text-center">
-            <p><a class="text-xl" href="tel:+79999999999">+7 (999) 999 99 99</a> </p>
-            <p class="mb-0"><a class="underline" href="mailto:sayan@slavyanka-hotels.ru">sayan@slavyanka-hotels.ru</a> </p>
+          <div class="mt-auto text-start">
+            <p class="px-0 mx-0 mb-0"><a class="text-xl" href="tel:+79999999999">+7 (999) 999 99 99</a></p>
+            <p class="px-0 mx-0 mb-0"><a class="underline" href="mailto:sayan@slavyanka-hotels.ru">sayan@slavyanka-hotels.ru</a> </p>
           </div>
         </div>
+        <div class="grid grid-cols-2">
+          <ul class="gap-3" v-for="(col, idx) in columns" :key="idx">
+            <li v-for="item in col" :key="item?.id">
+              <NuxtLink
+                  :to="item?.url"
+                  class="block px-3 py-2 text-xl text-secondary hover:text-secondary-300 hover:transition-colors duration-200"
+              >{{ item?.title }}</NuxtLink>
+            </li>
+          </ul>
+        </div>
         <div class="ms-16">
-          <p class="px-3 py-2">OOO «Группа Отелей Легенда»<br>
-            129090, Москва, ул. Щепкина, д. 3<br>
-            ИНН 7730292782<br>
-            ОГРН 1227700795420, КПП 773001001</p>
           <div class="mt-auto flex flex-col items-start gap-3 justify-center w-full">
-            <NuxtLink class="block px-3 py-2 text-white font-medium hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200" to="/">Правила проживания</NuxtLink>
-            <NuxtLink class="block px-3 py-2 text-white font-medium hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200" to="/">Правовая информация</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Правила проживания</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Правовая информация</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Политика конфиденциальности</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Программа лояльности</NuxtLink>
           </div>
         </div>
       </div>

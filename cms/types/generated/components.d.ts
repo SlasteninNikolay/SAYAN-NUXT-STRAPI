@@ -9,7 +9,7 @@ export interface MenuKnopka extends Struct.ComponentSchema {
   };
   attributes: {
     title: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['primary', 'secondary']>;
+    type: Schema.Attribute.Enumeration<['primary', 'secondary', 'link']>;
     url: Schema.Attribute.String;
   };
 }

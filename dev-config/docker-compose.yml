@@ -53,7 +53,7 @@ services:
       MYSQL_PASSWORD: ${DATABASE_PASSWORD}
       MYSQL_DATABASE: ${DATABASE_NAME}
     volumes:
-      - db:/var/lib/mysql
+      - /Users/nikolas/OrbStack/docker/volumes/sayan-hotel_db/_data:/var/lib/mysql
     networks:
       - strapi
 

@@ -107,10 +107,10 @@ const throttle = (func, limit) => {
     ]"
   >
     <div class="container-full mx-auto px-4 transition-all duration-300"
-         :class="[atTop ? 'bg-white lg:bg-beige-500' : 'bg-white']"
+         :class="[atTop ? 'bg-primary' : 'bg-primary']"
     >
       <!-- Десктопное меню -->
-      <div class="container hidden lg:flex items-center justify-between py-4"
+      <div class="container hidden lg:flex items-center justify-between py-2"
       >
         <!-- Логотип -->
         <NuxtLink
@@ -123,7 +123,7 @@ const throttle = (func, limit) => {
               :alt="logo?.alt || 'Логотип'"
               :width="logo?.width || 160"
               :height="logo?.height || 40"
-              class="h-8 w-auto"
+              class="h-12 w-auto"
               loading="lazy"
               decoding="async"
           />
@@ -137,7 +137,7 @@ const throttle = (func, limit) => {
               <a
                   v-if="item.__component === 'menu.ssylka'"
                   :href="item.url"
-                  class="px-3 py-2 text-primary-500 font-medium hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200"
+                  class="px-3 py-2 text-secondary hover:text-secondary-300 hover:transition-colors duration-200"
               >
                 {{ item.title }}
               </a>
@@ -145,7 +145,7 @@ const throttle = (func, limit) => {
               <!-- Выпадающее меню -->
               <div v-else-if="item.__component === 'menu.vypadayushhee-menyu'" class="relative">
                 <button
-                    class="flex items-center px-3 py-2 text-primary-500 font-medium hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200"
+                    class="flex items-center px-3 py-2 text-secondary font-medium hover:text-secondary-300 hover:transition-colors duration-200"
                 >
                   {{ item.title }}
                   <svg
@@ -166,7 +166,7 @@ const throttle = (func, limit) => {
                       <li v-for="link in section.links" :key="link.id">
                         <a
                             :href="link.url"
-                            class="block px-3 py-2 text-sm text-primary-500 font-medium hover:bg-primary-50 hover:text-primary-700 rounded transition-colors duration-200"
+                            class="block px-3 py-2 text-sm text-secondary font-medium hover:text-secondary-300 transition-colors duration-200"
                         >
                           {{ link.title }}
                         </a>
@@ -192,7 +192,7 @@ const throttle = (func, limit) => {
                 :class="[
       item.type === 'primary'
         ? 'bg-primary-500 text-white rounded-2xl border border-primary transition-all duration-300 group hover:border-secondary-600'
-        : 'bg-transparent text-primary-500'
+        : 'bg-transparent text-secondary hover:text-secondary-300 hover:transition-colors duration-200',
     ]"
                 @click="item.type !== 'link' && typeof item.onClick === 'function' ? item.onClick : null"
             >
@@ -200,12 +200,12 @@ const throttle = (func, limit) => {
               <Icon
                   name="solar:phone-broken"
                   class="relative me-2 z-10 text-xl transition-colors duration-300"
-                  :class="item.type === 'primary' ? 'text-white' : 'text-primary-500 group-hover:text-white'"
+                  :class="item.type === 'primary' ? 'text-white' : 'text-secondary group-hover:text-white'"
               />
               <span class="text-lg relative z-10 transition-colors duration-300 group-hover:text-white">{{ item.title }}</span>
             </component>
           </div>
-          <span class="text-sm">г. Саяногорск, Центральный мкр.,50</span>
+          <span class="text-sm text-secondary">г. Саяногорск, Центральный мкр.,50</span>
         </div>
       </div>
 
