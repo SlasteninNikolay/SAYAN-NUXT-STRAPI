@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_page_blok_o_lokaczii",
+  "info": {
+    "displayName": "Блок о локации",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "buttons": {
+      "type": "component",
+      "component": "page.knopki",
+      "repeatable": false
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

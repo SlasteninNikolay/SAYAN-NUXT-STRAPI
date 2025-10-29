@@ -1,0 +1,99 @@
+/* Intro Bold */
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/INTRO-BOOK.TTF') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/INTRO-REGULAR.TTF') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Intro';
+    src: url('../fonts/INTRO-BOLD.TTF') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Aeroport';
+    src: url('../fonts/Aeroport.woff') format('woff'), url('Aeroport.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Цветовая палитра */
+    --color-primary: #2a3928;
+    --color-secondary: #bdad83;
+    --color-accent: #8c5a50;
+    --color-text-dark: #424242;
+}
+
+
+@layer base {
+    html {
+        font-family: 'Intro', serif;
+        background-color: #ffffff;
+        color: #424242;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    svg.icon path {
+        fill: currentColor !important;
+    }
+
+    .h4 {
+        @apply text-xl font-semibold text-primary;
+    }
+
+}
+
+.swiper-slide {
+    @apply w-full h-auto;
+}
+
+.swiper-slide img {
+    height: 380px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--color-primary) !important;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,.1);
+    border-radius: 50%;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-gray-300 w-2 h-2 opacity-50 mx-2;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply bg-white opacity-100;
+}

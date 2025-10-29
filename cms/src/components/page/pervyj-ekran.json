@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_page_pervyj_ekran",
+  "info": {
+    "displayName": "Первый экран",
+    "icon": "monitor",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "header": {
+      "displayName": "Заголовок",
+      "type": "component",
+      "repeatable": false,
+      "component": "page.zagolovok"
+    },
+    "text": {
+      "type": "text"
+    },
+    "buttons": {
+      "displayName": "Кнопки",
+      "type": "component",
+      "repeatable": true,
+      "component": "page.knopki"
+    }
+  }
+}

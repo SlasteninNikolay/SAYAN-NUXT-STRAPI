@@ -1,0 +1,66 @@
+<template>
+  <div class="container">
+    <div class="hidden lg:flex gap-4">
+      <app-booking-select
+          label="СЕЗОН"
+          placeholder="Выберите сезон"
+          :options="seasonOptions"
+          v-model="selectedSeason"
+      />
+
+      <app-booking-select
+          label="СМЕНА"
+          placeholder="Выберите дату"
+          :options="shiftOptions"
+          v-model="selectedShift"
+      />
+
+      <base-app-button
+          title="Купить путевку"
+          type="secondary"
+          size="large"
+      />
+    </div>
+  </div>
+</template>
+
+<script setup>
+
+definePageMeta({
+  layout: 'default'
+})
+
+useHead({
+  title: 'Главная',
+  meta: [
+    { name: 'description', content: 'Детский лагерь LEGENDA Camps на Черном море' },
+    { name: 'keywords', content: 'детский лагерь, черное море, legenda camps' },
+    { property: 'og:title', content: 'LEGENDA Camps' },
+    { property: 'og:description', content: 'Детский лагерь LEGENDA Camps на Черном море' }
+  ],
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+  ]
+})
+
+
+const selectedSeason = ref(null)
+const selectedShift = ref(null)
+
+const seasonOptions = [
+  { value: 'summer2025', label: 'ЛЕТО 2025' },
+  { value: 'winter2025', label: 'ЗИМА 2025' },
+  { value: 'autumn2025', label: 'ОСЕНЬ 2025' },
+]
+
+const shiftOptions = [
+  { value: '2025-01-23', label: '23.01.2025' },
+  { value: '2025-01-24', label: '24.01.2025' },
+  { value: '2025-01-25', label: '25.01.2025' },
+]
+
+function book() {
+  console.log('Бронирование:', { season: selectedSeason.value, shift: selectedShift.value })
+  alert(`Бронь: ${selectedSeason.value} — ${selectedShift.value}`)
+}
+</script>

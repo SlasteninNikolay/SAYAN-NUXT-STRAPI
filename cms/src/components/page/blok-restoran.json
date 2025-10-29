@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_page_blok_restoran",
+  "info": {
+    "displayName": "Блок ресторан",
+    "icon": "restaurant"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "features": {
+      "type": "component",
+      "component": "page.opczii",
+      "repeatable": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "buttons": {
+      "type": "component",
+      "component": "page.knopki",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

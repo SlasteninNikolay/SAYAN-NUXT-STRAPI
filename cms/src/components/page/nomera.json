@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_nomera",
+  "info": {
+    "displayName": "Блок с номерами",
+    "icon": "house"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "rooms": {
+      "type": "component",
+      "component": "page.nomer",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

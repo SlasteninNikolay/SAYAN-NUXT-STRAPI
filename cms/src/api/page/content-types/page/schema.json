@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Страницы",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "type": "string",
+      "unique": false
+    },
+    "SEO": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "page.seo",
+      "repeatable": false
+    },
+    "block": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "page.pervyj-ekran",
+        "page.info-blok",
+        "page.nomera",
+        "page.blok-s-uslugami",
+        "page.blok-organizacziya-meropriyatij",
+        "page.blok-uchebnye-korpusa",
+        "page.blok-s-kartoj"
+      ]
+    },
+    "publish_at": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
