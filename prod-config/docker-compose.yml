@@ -6,7 +6,7 @@ services:
       context: ../cms
       dockerfile: ../prod-config/Dockerfile.cms
     ports:
-      - "11337:1337"
+      - "1337:1337"
     volumes:
       - strapi_uploads:/usr/app/public/uploads
     restart: unless-stopped
@@ -44,7 +44,7 @@ services:
         NUXT_PUBLIC_STRAPI_URL: ${NUXT_PUBLIC_STRAPI_URL}
         NUXT_STRAPI_TOKEN: ${NUXT_STRAPI_TOKEN}
     ports:
-      - "13000:3000"
+      - "3000:3000"
     # Для Portainer (убрать если используется .env)
     env_file:
       - stack.env
@@ -56,7 +56,7 @@ services:
     image: mysql:8.0
     restart: unless-stopped
     ports:
-      - "13306:3306"
+      - "3306:3306"
     environment:
       MYSQL_USER: ${DATABASE_USERNAME}
       MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
