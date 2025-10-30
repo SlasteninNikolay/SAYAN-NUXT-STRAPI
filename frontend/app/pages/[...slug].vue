@@ -53,7 +53,7 @@ const loadData = async () => {
     const result = await find('pages', {
       filters: { slug: slug.value },
       locale: locale.value,
-      populate: ['block', 'block.images', 'block.header', 'block.cards', 'block.cards.icon', 'block.rooms', 'block.rooms.photos', 'block.rooms.button', 'block.rooms.features', 'block.rooms.features.icon', 'block.service', "block.service.image", "block.tabs", "block.tabs.photos", "block.tabs.buttons", "block.tabs.buttons.link", "block.gallery", "block.features"],
+      populate: ['block', 'block.images', 'block.header','block.services', 'block.contacts', 'block.contacts.icon', 'block.services.images', 'block.form.name','block.form.message','block.form.phone','block.form.accept_terms', 'block.buttons.link', 'block.cards', 'block.cards.icon', 'block.rooms', 'block.rooms.photos', 'block.rooms.button', 'block.rooms.features', 'block.rooms.features.icon', 'block.service', "block.service.image", "block.tabs", "block.tabs.photos", "block.tabs.buttons", "block.tabs.buttons.link", "block.gallery", "block.features"],
     });
 
     pageData.value = result

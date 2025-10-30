@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_blok_obratnaya_svyaz",
+  "info": {
+    "displayName": "Блок обратная связь",
+    "icon": "paperPlane"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "form": {
+      "type": "component",
+      "component": "page.forma-obratnoj-svyazi",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

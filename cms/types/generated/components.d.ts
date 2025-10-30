@@ -1,5 +1,43 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface FormCheckbox extends Struct.ComponentSchema {
+  collectionName: 'components_form_checkboxes';
+  info: {
+    displayName: 'checkbox';
+    icon: 'check';
+  };
+  attributes: {
+    checked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface FormPole extends Struct.ComponentSchema {
+  collectionName: 'components_form_pole';
+  info: {
+    displayName: 'input';
+    icon: 'bulletList';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
+export interface FormTextarea extends Struct.ComponentSchema {
+  collectionName: 'components_form_textareas';
+  info: {
+    displayName: 'textarea';
+    icon: 'layer';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    placeholder: Schema.Attribute.String;
+    value: Schema.Attribute.Text;
+  };
+}
+
 export interface MenuKnopka extends Struct.ComponentSchema {
   collectionName: 'components_menu_knopka';
   info: {
@@ -75,6 +113,19 @@ export interface MenuVypadayushheeMenyu extends Struct.ComponentSchema {
   };
 }
 
+export interface PageBlokDvuhkolonochnyjTekst extends Struct.ComponentSchema {
+  collectionName: 'components_page_blok_dvuhkolonochnyj_tekst';
+  info: {
+    displayName: '\u0411\u043B\u043E\u043A \u0434\u0432\u0443\u0445\u043A\u043E\u043B\u043E\u043D\u043E\u0447\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442';
+    icon: 'layer';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<'images'>;
+    left_part: Schema.Attribute.Blocks;
+    right_part: Schema.Attribute.Blocks;
+  };
+}
+
 export interface PageBlokOLokaczii extends Struct.ComponentSchema {
   collectionName: 'components_page_blok_o_lokaczii';
   info: {
@@ -86,6 +137,19 @@ export interface PageBlokOLokaczii extends Struct.ComponentSchema {
     description: Schema.Attribute.Blocks;
     header: Schema.Attribute.Component<'page.zagolovok', false>;
     images: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface PageBlokObratnayaSvyaz extends Struct.ComponentSchema {
+  collectionName: 'components_page_blok_obratnaya_svyaz';
+  info: {
+    displayName: '\u0411\u043B\u043E\u043A \u043E\u0431\u0440\u0430\u0442\u043D\u0430\u044F \u0441\u0432\u044F\u0437\u044C';
+    icon: 'paperPlane';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    form: Schema.Attribute.Component<'page.forma-obratnoj-svyazi', false>;
+    header: Schema.Attribute.Component<'page.zagolovok', false>;
   };
 }
 
@@ -131,6 +195,19 @@ export interface PageBlokSKartoj extends Struct.ComponentSchema {
   };
 }
 
+export interface PageBlokSKontaktami extends Struct.ComponentSchema {
+  collectionName: 'components_page_blok_s_kontaktami';
+  info: {
+    displayName: '\u0411\u043B\u043E\u043A \u0441 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u0430\u043C\u0438';
+    icon: 'pinMap';
+  };
+  attributes: {
+    contacts: Schema.Attribute.Component<'page.opczii', true>;
+    header: Schema.Attribute.Component<'page.zagolovok', false>;
+    images: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface PageBlokSUslugami extends Struct.ComponentSchema {
   collectionName: 'components_page_blok_s_uslugami';
   info: {
@@ -144,6 +221,32 @@ export interface PageBlokSUslugami extends Struct.ComponentSchema {
   };
 }
 
+export interface PageBlokSpaUslug extends Struct.ComponentSchema {
+  collectionName: 'components_page_blok_spa_uslug';
+  info: {
+    displayName: '\u0411\u043B\u043E\u043A \u0441\u043F\u0430 \u0443\u0441\u043B\u0443\u0433';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    header: Schema.Attribute.Component<'page.zagolovok', false>;
+    services: Schema.Attribute.Component<'page.services', true>;
+  };
+}
+
+export interface PageBlokTekstSKartinkoj extends Struct.ComponentSchema {
+  collectionName: 'components_page_blok_tekst_s_kartinkoj';
+  info: {
+    displayName: '\u0411\u043B\u043E\u043A \u0442\u0435\u043A\u0441\u0442 \u0441 \u043A\u0430\u0440\u0442\u0438\u043D\u043A\u043E\u0439';
+    icon: 'layout';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    header: Schema.Attribute.Component<'page.zagolovok', false>;
+    images: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface PageBlokUchebnyeKorpusa extends Struct.ComponentSchema {
   collectionName: 'components_page_blok_uchebnye_korpusa';
   info: {
@@ -154,6 +257,20 @@ export interface PageBlokUchebnyeKorpusa extends Struct.ComponentSchema {
     description: Schema.Attribute.Blocks;
     gallery: Schema.Attribute.Media<'images', true>;
     header: Schema.Attribute.Component<'page.zagolovok', false>;
+  };
+}
+
+export interface PageFormaObratnojSvyazi extends Struct.ComponentSchema {
+  collectionName: 'components_page_forma_obratnoj_svyazi';
+  info: {
+    displayName: '\u0424\u043E\u0440\u043C\u0430 \u043E\u0431\u0440\u0430\u0442\u043D\u043E\u0439 \u0441\u0432\u044F\u0437\u0438';
+    icon: 'paperPlane';
+  };
+  attributes: {
+    accept_terms: Schema.Attribute.Component<'form.checkbox', false>;
+    message: Schema.Attribute.Component<'form.textarea', false>;
+    name: Schema.Attribute.Component<'form.pole', false>;
+    phone: Schema.Attribute.Component<'form.pole', false>;
   };
 }
 
@@ -302,6 +419,19 @@ export interface PageSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface PageServices extends Struct.ComponentSchema {
+  collectionName: 'components_page_services';
+  info: {
+    displayName: 'services';
+    icon: 'emotionHappy';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<'images'>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface PageSsylka extends Struct.ComponentSchema {
   collectionName: 'components_page_ssylka';
   info: {
@@ -361,18 +491,27 @@ export interface SeoMetaField extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'form.checkbox': FormCheckbox;
+      'form.pole': FormPole;
+      'form.textarea': FormTextarea;
       'menu.knopka': MenuKnopka;
       'menu.logo': MenuLogo;
       'menu.punkt-menyu': MenuPunktMenyu;
       'menu.ssylka': MenuSsylka;
       'menu.tekst': MenuTekst;
       'menu.vypadayushhee-menyu': MenuVypadayushheeMenyu;
+      'page.blok-dvuhkolonochnyj-tekst': PageBlokDvuhkolonochnyjTekst;
       'page.blok-o-lokaczii': PageBlokOLokaczii;
+      'page.blok-obratnaya-svyaz': PageBlokObratnayaSvyaz;
       'page.blok-organizacziya-meropriyatij': PageBlokOrganizacziyaMeropriyatij;
       'page.blok-restoran': PageBlokRestoran;
       'page.blok-s-kartoj': PageBlokSKartoj;
+      'page.blok-s-kontaktami': PageBlokSKontaktami;
       'page.blok-s-uslugami': PageBlokSUslugami;
+      'page.blok-spa-uslug': PageBlokSpaUslug;
+      'page.blok-tekst-s-kartinkoj': PageBlokTekstSKartinkoj;
       'page.blok-uchebnye-korpusa': PageBlokUchebnyeKorpusa;
+      'page.forma-obratnoj-svyazi': PageFormaObratnojSvyazi;
       'page.info-blok': PageInfoBlok;
       'page.kartochka': PageKartochka;
       'page.kartochka-uslugi': PageKartochkaUslugi;
@@ -383,6 +522,7 @@ declare module '@strapi/strapi' {
       'page.pervyj-ekran': PagePervyjEkran;
       'page.pervyj-ekran-malyj': PagePervyjEkranMalyj;
       'page.seo': PageSeo;
+      'page.services': PageServices;
       'page.ssylka': PageSsylka;
       'page.taby': PageTaby;
       'page.zagolovok': PageZagolovok;

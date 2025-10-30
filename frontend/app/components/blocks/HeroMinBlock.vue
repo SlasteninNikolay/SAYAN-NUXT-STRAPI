@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="absolute top-0 left-0 w-full h-screen">
+    <div class="absolute top-0 left-0 w-full h-screen max-h-[60vh]">
       <base-app-slider class="w-full h-screen max-h-[60vh]">
         <base-app-slider-image
             v-for="photo in images"
@@ -47,7 +47,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
   height: 100%;
   position: absolute;
   inset: 0;
-  background: linear-gradient(270deg, rgba(42, 57, 40, 0.2) 10%, rgba(42, 57, 40, 1) 80%);
+  background: linear-gradient(270deg, rgba(42, 57, 40, 0.2) 60%, rgba(42, 57, 40, 1) 90%);
   z-index: 1;
 }
 

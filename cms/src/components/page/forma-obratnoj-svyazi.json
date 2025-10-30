@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_page_forma_obratnoj_svyazi",
+  "info": {
+    "displayName": "Форма обратной связи",
+    "icon": "paperPlane"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "component",
+      "component": "form.pole",
+      "repeatable": false
+    },
+    "phone": {
+      "type": "component",
+      "component": "form.pole",
+      "repeatable": false
+    },
+    "message": {
+      "type": "component",
+      "component": "form.textarea",
+      "repeatable": false
+    },
+    "accept_terms": {
+      "type": "component",
+      "component": "form.checkbox",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

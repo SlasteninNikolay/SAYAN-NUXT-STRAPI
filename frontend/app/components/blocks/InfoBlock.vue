@@ -4,7 +4,7 @@
       <object class="absolute w-64 top-0 translate-y-1/2 left-1/2 -translate-x-1/2 -z-10 opacity-20" type="image/svg+xml" data="/images/svg/pane.svg"></object>
       <div class="grid grid-cols-2 gap-28">
         <div>
-          <h2 class="heading relative text-[clamp(1.2rem,4vw,2rem)] max-w-[480px] uppercase font-medium text-primary text-balance">{{ header?.title }}</h2>
+          <h2 class="heading relative text-3xl max-w-[480px] uppercase font-medium text-primary text-balance">{{ header?.title }}</h2>
           <div class="max-w-[500px] mt-8 text-base font-intro text-primary" v-if="description" v-html="htmlDescription"></div>
         </div>
         <!--   /left part    -->

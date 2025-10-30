@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_page_blok_s_kontaktami",
+  "info": {
+    "displayName": "Блок с контактами",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "contacts": {
+      "type": "component",
+      "component": "page.opczii",
+      "repeatable": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

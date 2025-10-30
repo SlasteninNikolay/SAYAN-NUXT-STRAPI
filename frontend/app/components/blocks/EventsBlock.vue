@@ -24,7 +24,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
   <section class="relative py-24 bg-white">
     <div class="container">
       <div class="flex flex-col gap-4 mb-12">
-        <h2 class="heading relative text-2xl uppercase font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
+        <h2 class="heading relative text-3xl uppercase font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
         <div class="max-w-2xl text-base font-light" v-if="description" v-html="htmlDescription"></div>
       </div>
       <app-tabs>

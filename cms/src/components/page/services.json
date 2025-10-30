@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_services",
+  "info": {
+    "displayName": "services",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

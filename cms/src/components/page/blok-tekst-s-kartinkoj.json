@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_page_blok_tekst_s_kartinkoj",
+  "info": {
+    "displayName": "Блок текст с картинкой",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

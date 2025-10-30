@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_blok_dvuhkolonochnyj_tekst",
+  "info": {
+    "displayName": "Блок двухколоночный текст",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "left_part": {
+      "type": "blocks"
+    },
+    "right_part": {
+      "type": "blocks"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

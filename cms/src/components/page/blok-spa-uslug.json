@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_page_blok_spa_uslug",
+  "info": {
+    "displayName": "Блок спа услуг",
+    "icon": "emotionHappy"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "services": {
+      "type": "component",
+      "component": "page.services",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

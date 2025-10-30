@@ -48,15 +48,30 @@ const loadBlockComponent = (componentType) => {
     'page.blok-organizacziya-meropriyatij': defineAsyncComponent(() =>
         import('@/components/blocks/EventsBlock.vue')
     ),
-    // 'page.blok-uchebnye-korpusa': defineAsyncComponent(() =>
-    //     import('@/components/blocks/LecturesBlock.vue')
-    // ),
+    'page.blok-uchebnye-korpusa': defineAsyncComponent(() =>
+        import('@/components/blocks/LecturesBlock.vue')
+    ),
     'page.blok-s-kartoj': defineAsyncComponent(() =>
         import('@/components/blocks/MapBlock.vue')
     ),
     'page.pervyj-ekran-malyj': defineAsyncComponent(() =>
         import('@/components/blocks/HeroMinBlock.vue')
     ),
+    'page.blok-dvuhkolonochnyj-tekst': defineAsyncComponent(() =>
+        import('@/components/blocks/DoubleTextBlock.vue')
+    ),
+    'page.blok-tekst-s-kartinkoj': defineAsyncComponent(() =>
+        import('@/components/blocks/TextWithBackBlock.vue')
+    ),
+    'page.blok-obratnaya-svyaz': defineAsyncComponent(() =>
+        import('@/components/blocks/FeedbackBlock.vue')
+    ),
+    'page.blok-spa-uslug': defineAsyncComponent(() =>
+        import('@/components/blocks/SpaServicesBlock.vue')
+    ),
+    'page.blok-s-kontaktami': defineAsyncComponent(() =>
+      import('@/components/blocks/ContactsBlock.vue')
+  ),
   }
   return componentMap[componentType] || null
 }

@@ -124,7 +124,7 @@ const textClasses = computed(() => {
     return 'text-white'
   }
   if (props.type === 'secondary') {
-    return 'text-accent/80 text-medium text-base'
+    return 'text-white/90 text-medium text-base'
   }
   return `text-primary-500 group-hover:text-white`
 })
