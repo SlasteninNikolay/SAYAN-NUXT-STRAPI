@@ -54,6 +54,9 @@ const loadBlockComponent = (componentType) => {
     'page.blok-s-kartoj': defineAsyncComponent(() =>
         import('@/components/blocks/MapBlock.vue')
     ),
+    'page.pervyj-ekran-malyj': defineAsyncComponent(() =>
+        import('@/components/blocks/HeroMinBlock.vue')
+    ),
   }
   return componentMap[componentType] || null
 }

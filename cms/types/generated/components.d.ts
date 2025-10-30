@@ -280,7 +280,7 @@ export interface PagePervyjEkranMalyj extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Blocks;
     header: Schema.Attribute.Component<'page.zagolovok', false>;
-    images: Schema.Attribute.Media<'images'>;
+    images: Schema.Attribute.Media<'images', true>;
   };
 }
 
