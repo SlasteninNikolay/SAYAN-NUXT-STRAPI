@@ -134,13 +134,13 @@ const throttle = (func, limit) => {
           <li v-for="item in menuData" :key="item.id" class="group relative">
             <template v-if="item.__component !== 'menu.logo' && item.__component !== 'menu.knopka'">
               <!-- Обычная ссылка -->
-              <a
+              <NuxtLink
                   v-if="item.__component === 'menu.ssylka'"
-                  :href="item.url"
+                  :to="item.url"
                   class="px-3 py-2 text-secondary hover:text-secondary-300 hover:transition-colors duration-200"
               >
                 {{ item.title }}
-              </a>
+              </NuxtLink>
 
               <!-- Выпадающее меню -->
               <div v-else-if="item.__component === 'menu.vypadayushhee-menyu'" class="relative">
@@ -164,12 +164,12 @@ const throttle = (func, limit) => {
                   <li v-for="section in item.sections" :key="section.id" class="px-2 py-1">
                     <ul class="space-y-1">
                       <li v-for="link in section.links" :key="link.id">
-                        <a
-                            :href="link.url"
+                        <NuxtLink
+                            :to="link.url"
                             class="block px-3 py-2 text-sm text-secondary font-medium hover:text-secondary-300 transition-colors duration-200"
                         >
                           {{ link.title }}
-                        </a>
+                        </NuxtLink>
                       </li>
                     </ul>
                   </li>
