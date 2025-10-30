@@ -8,7 +8,7 @@ services:
     ports:
       - "1337:1337"
     volumes:
-      - strapi_uploads:/usr/app/public/uploads
+      - strapi_uploads:/usr/app/public
     restart: unless-stopped
     networks:
       - sayannet
