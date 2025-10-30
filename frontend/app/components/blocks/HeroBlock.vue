@@ -6,7 +6,7 @@
         <div class="flex items-start justify-center gap-14 flex-col container h-full">
          <div class="flex flex-col gap-6 max-w-xl text-balance">
            <app-main-heading :title="header?.title" />
-           <p class="m-0 text-xl font-intro font-medium text-white">Одна из лучших гостиниц в Хакасии в самом сердце Саяногорска</p>
+           <p class="m-0 text-xl font-intro font-medium text-white/80">{{ text }}</p>
          </div>
           <base-app-button
               url="/booking"
@@ -17,9 +17,9 @@
               aria-label="Забронировать"
           />
           <div class="flex gap-20 max-w-3xl text-balance">
-            <span class="border-l-2 border-secondary px-3 text-base font-regular text-white bg-primary/50">35 комфортабельных номеров </span>
-            <span class="border-l-2 border-secondary px-3 text-base font-regular text-white bg-primary/50">Ресторан сибирской кухни</span>
-            <span class="border-l-2 border-secondary px-3 text-base font-regular text-white bg-primary/50">Спа-зона с бассейном</span>
+            <span class="border-l-2 border-secondary px-3 text-base font-regular text-white/80 bg-primary/50">35 комфортабельных номеров </span>
+            <span class="border-l-2 border-secondary px-3 text-base font-regular text-white/80 bg-primary/50">Ресторан сибирской кухни</span>
+            <span class="border-l-2 border-secondary px-3 text-base font-regular text-white/80 bg-primary/50">Спа-зона с бассейном</span>
           </div>
         </div>
       </div>
@@ -59,9 +59,9 @@ defineProps({
   height: 100%;
   position: absolute;
   inset: 0;
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 30%, var(--color-primary) 100%);
+  background: linear-gradient(270deg, rgba(42, 57, 40, 0.2) 20%, rgba(42, 57, 40, 0.8) 80%);
   z-index: 1;
+  opacity: 0.8;
 }
-
 
 </style>

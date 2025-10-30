@@ -17,7 +17,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
     <div class="container">
       <div class="flex flex-col gap-4 mb-12">
         <h2 class="heading relative text-[clamp(1.2rem,4vw,2rem)] uppercase font-medium text-white text-balance">{{ header?.title }}</h2>
-        <div class="max-w-2xl text-base text-white font-light text-balance z-10" v-if="description" v-html="htmlDescription"></div>
+        <div class="max-w-2xl text-base text-white/80 font-light text-balance z-10" v-if="description" v-html="htmlDescription"></div>
       </div>
     </div>
   </section>
@@ -31,8 +31,8 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
   inset: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0.00) 20%, var(--color-primary) 100%);
-  opacity: 0.6;
+  background: linear-gradient(270deg, rgba(42, 57, 40, 0.2) 20%, rgba(42, 57, 40, 0.8) 80%);
+  opacity: 0.8;
   z-index: 0;
 }
 </style>

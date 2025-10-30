@@ -120,8 +120,11 @@ const iconClasses = computed(() => {
 
 // Классы для текста
 const textClasses = computed(() => {
-  if (props.type === 'primary' || props.type === 'secondary') {
+  if (props.type === 'primary') {
     return 'text-white'
+  }
+  if (props.type === 'secondary') {
+    return 'text-accent/80 text-medium text-base'
   }
   return `text-primary-500 group-hover:text-white`
 })

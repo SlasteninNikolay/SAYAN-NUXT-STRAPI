@@ -34,7 +34,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
   top: -100px;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 52px;
   background-image: url("/images/line.svg");
   background-repeat: no-repeat;
   background-size: contain;
