@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
     vite: {
         server: {
-            allowedHosts: ['localhost', 'legenda-camps.ru'],
+            allowedHosts: ['localhost', 'legenda-dev.ru'],
         },
     },
     css: ['~/assets/css/main.css'],

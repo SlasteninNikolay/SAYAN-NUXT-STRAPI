@@ -11,7 +11,7 @@ module.exports = [
     {
         name: 'strapi::cors',
         config: {
-            origin: ['http://localhost:3000', "https://legenda-camps.ru","https://legenda-camps.ru", "https://cms.legenda-camps.ru"],
+            origin: ['http://localhost:3000', "https://legenda-dev.ru","https://legenda-dev.ru", "https://cms.legenda-dev.ru"],
             methods: ['GET', 'POST', 'OPTIONS'],
             headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
             keepHeaderOnError: true,
