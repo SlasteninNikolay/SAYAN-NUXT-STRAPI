@@ -16,6 +16,7 @@
       <AppFooter class="mt-auto" />
     </div>
   </div>
+  <cookie-notice />
 </template>
 
 <script setup>
