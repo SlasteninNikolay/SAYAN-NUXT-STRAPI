@@ -7,8 +7,6 @@ services:
       dockerfile: ../prod-config/Dockerfile.cms
     ports:
       - "1337:1337"
-    volumes:
-      - ../cms/public/uploads:/usr/app/public/uploads
     restart: unless-stopped
     networks:
       - sayannet
