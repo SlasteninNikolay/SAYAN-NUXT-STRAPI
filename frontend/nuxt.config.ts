@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     vite: {
         server: {
-            allowedHosts: ['localhost', 'legenda-dev.ru'],
+            allowedHosts: ['localhost', 'slavyanka-sayanogorsk.ru'],
         },
     },
     css: ['~/assets/css/main.css'],
