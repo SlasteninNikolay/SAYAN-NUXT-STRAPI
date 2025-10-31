@@ -17,7 +17,8 @@ const props = defineProps({
           <h2 class="heading relative text-3xl uppercase font-etude font-medium text-primary text-balance mb-8">{{ header?.title }}</h2>
           <div v-for="(item, index) in contacts" :key="index" class="flex items-center gap-4 mt-2">
             <img :src="getStrapiMedia(item?.icon.url)" class="w-6 h-6 text-primary-500" :alt="item.title" :title="item.title" />
-            <span class="text-base text-primary">{{ item.title }}</span>
+            <a v-if="item?.link" :href="item?.link">{{ item.title }}</a>
+            <span v-else class="text-base text-primary">{{ item.title }}</span>
           </div>
         </div>
         <div class="w-full max-h-[400px] overflow-hidden">

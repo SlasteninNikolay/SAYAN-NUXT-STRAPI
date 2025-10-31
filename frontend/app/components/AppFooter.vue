@@ -57,8 +57,7 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
               <img
                   src="/icons/logo-main-white.svg"
                   alt=""
-                  width="211"
-                  height="44"
+                  width="240"
                   class="shrink-0"
                   loading="lazy"
                   decoding="async"
@@ -67,11 +66,11 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
             <p class="mt-4 text-sm text-secondary/50 text-center text-balance">г. Саяногорск, Центральный мкр.,50</p>
           </div>
           <div class="mt-auto text-start">
-            <p class="px-0 mx-0 mb-0"><a class="text-xl" href="tel:+79999999999">+7 (999) 999 99 99</a></p>
-            <p class="px-0 mx-0 mb-0"><a class="underline" href="mailto:sayan@slavyanka-hotels.ru">sayan@slavyanka-hotels.ru</a> </p>
+            <p class="px-0 mx-0 mb-0"><a class="text-xl" href="tel:83904250900">8 (39042) 50900</a></p>
+            <p class="px-0 mx-0 mb-0"><a class="underline" href="mailto:reception@slavyanka-sayanogorsk.ru">reception@slavyanka-sayanogorsk.ru</a> </p>
           </div>
         </div>
-        <div class="grid grid-cols-2">
+        <div class="mt-16 grid grid-cols-2">
           <ul class="gap-3" v-for="(col, idx) in columns" :key="idx">
             <li v-for="item in col" :key="item?.id">
               <NuxtLink
@@ -81,12 +80,11 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
             </li>
           </ul>
         </div>
-        <div class="ms-16">
+        <div class="mt-16 ms-16">
           <div class="mt-auto flex flex-col items-start gap-3 justify-center w-full">
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Правила проживания</NuxtLink>
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Правовая информация</NuxtLink>
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Политика конфиденциальности</NuxtLink>
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/">Программа лояльности</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/rules">Правила проживания</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/politic">Политика конфиденциальности</NuxtLink>
+            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/loyalty">Программа лояльности</NuxtLink>
           </div>
         </div>
       </div>

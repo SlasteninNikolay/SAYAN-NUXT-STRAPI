@@ -16,7 +16,7 @@
               title="Забронировать"
               aria-label="Забронировать"
           />
-          <div class="flex gap-20 max-w-3xl text-balance">
+          <div class="mt-12 flex gap-20 max-w-3xl text-balance">
             <span class="border-l-2 border-secondary px-3 text-base font-regular text-white/80 bg-primary/50">35 комфортабельных номеров </span>
             <span class="border-l-2 border-secondary px-3 text-base font-regular text-white/80 bg-primary/50">Ресторан сибирской кухни</span>
             <span class="border-l-2 border-secondary px-3 text-base font-regular text-white/80 bg-primary/50">Спа-зона с бассейном</span>
@@ -59,7 +59,7 @@ defineProps({
   height: 100%;
   position: absolute;
   inset: 0;
-  background: linear-gradient(270deg, rgba(42, 57, 40, 0.2) 20%, rgba(42, 57, 40, 0.8) 80%);
+  background: linear-gradient(270deg, rgba(42, 57, 40, 0.1) 20%, rgba(42, 57, 40, 0.8) 80%);
   z-index: 1;
   opacity: 0.8;
 }
