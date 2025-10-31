@@ -60,7 +60,8 @@
         "page.blok-tekst-s-kartinkoj",
         "page.blok-obratnaya-svyaz",
         "page.blok-spa-uslug",
-        "page.blok-s-kontaktami"
+        "page.blok-s-kontaktami",
+        "page.blok-odnokolonochnyj-tekst"
       ]
     },
     "publish_at": {

@@ -48,8 +48,8 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
 
 <template>
   <footer class="w-full bg-primary text-secondary">
-    <div class="container mx-auto py-16 px-4">
-      <div class="grid grid-cols-3">
+    <div class="container mx-auto py-10 md:py-16 px-4">
+      <div class="flex flex-col md:grid md:grid-cols-3">
         <div class="flex flex-col items-start justify-center w-full">
           <div class="flex flex-col items-start justify-center w-full mb-4">
             <NuxtLink
@@ -80,11 +80,11 @@ const columns = computed(() => splitArray(flatLinks.value, 2));
             </li>
           </ul>
         </div>
-        <div class="mt-16 ms-16">
-          <div class="mt-auto flex flex-col items-start gap-3 justify-center w-full">
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/rules">Правила проживания</NuxtLink>
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/politic">Политика конфиденциальности</NuxtLink>
-            <NuxtLink class="block px-3 py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/loyalty">Программа лояльности</NuxtLink>
+        <div class="mt-4 ms-0 md:mt-16 md:ms-16">
+          <div class="mt-auto flex flex-col items-start gap-1 md:gap-3 justify-center w-full">
+            <NuxtLink class="block px-0 md:px-3 py-1 md:py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/rules">Правила проживания</NuxtLink>
+            <NuxtLink class="block px-0 md:px-3 py-1 md:py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/politic">Политика конфиденциальности</NuxtLink>
+            <NuxtLink class="block px-0 md:px-3 py-1 md:py-2 text-secondary/80 underline hover:text-secondary-300 hover:transition-colors duration-200" to="/user-agreement">Пользовательское соглашение</NuxtLink>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
     <object class="absolute top-0 right-0 h-full z-0" type="image/svg+xml" data="/images/svg/route-3.svg"></object>
     <div class="container">
       <div class="grid grid-cols-2 mb-14 gap-14">
-        <h2 class="heading relative text-2xl uppercase font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
+        <h2 class="heading relative text-2xl md:text-3xl font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
         <div class="max-w-2xl text-lg font-medium text-balance" v-if="description" v-html="htmlDescription"></div>
       </div>
       <div class="grid grid-cols-4 grid-rows-2 gap-6 py-6">

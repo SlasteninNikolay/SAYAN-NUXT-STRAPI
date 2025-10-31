@@ -453,6 +453,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'page.blok-obratnaya-svyaz',
         'page.blok-spa-uslug',
         'page.blok-s-kontaktami',
+        'page.blok-odnokolonochnyj-tekst',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

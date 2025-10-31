@@ -20,12 +20,12 @@ const transform = computed(
 <template>
   <div class="overflow-hidden">
     <!-- Хедеры вкладок -->
-    <div class="flex items-center justify-between border-y border-s border-secondary rounded-lg">
+    <div class="flex items-center justify-between border-y border-s border-secondary rounded-lg overflow-x-auto">
       <div
           v-for="(tabVNode, index) in getTabs()"
           :key="tabVNode.props?.slug ?? index"
           @click="active = index"
-          class="tab-item w-full flex items-center justify-center p-2 text-secondary border-e border-secondary cursor-pointer hover:bg-secondary transition-colors duration-300 hover:text-white"
+          class="tab-item w-full flex items-center justify-center p-2 text-nowrap min-w-64 text-secondary border-e border-secondary cursor-pointer hover:bg-secondary transition-colors duration-300 hover:text-white"
           :class="['tab-title', active === index ? 'active' : '']"
       >
         {{ tabVNode.props?.label ?? `Tab ${index+1}` }}
@@ -48,7 +48,7 @@ const transform = computed(
 
 <style scoped>
 .tab-item.active {
-  @apply bg-secondary text-white;
+  @apply bg-secondary text-white font-medium;
 }
 
 .tab-item:last-child {

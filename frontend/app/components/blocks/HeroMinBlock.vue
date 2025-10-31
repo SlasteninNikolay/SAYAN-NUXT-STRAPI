@@ -6,7 +6,7 @@
       <div class="flex items-start justify-center gap-14 flex-col container h-full">
         <div class="flex flex-col gap-6 max-w-xl text-balance">
           <app-main-heading :title="header?.title" />
-          <p class="m-0 text-xl font-intro font-medium text-white/80" v-if="description" v-html="htmlDescription"></p>
+          <p class="m-0 text-xl font-intro text-white/80" v-if="description" v-html="htmlDescription"></p>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
   height: 100%;
   position: absolute;
   inset: 0;
-  background: linear-gradient(270deg, rgba(42, 57, 40, 0.2) 60%, rgba(42, 57, 40, 1) 90%);
+  background: linear-gradient(270deg, rgba(42, 57, 40, 0.1) 20%, rgba(42, 57, 40, 0.8) 80%);
   z-index: 1;
 }
 

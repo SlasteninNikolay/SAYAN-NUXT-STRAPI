@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
       <div>
-        <h1 class="main-heading text-6xl leading-[1.4] font-intro font-medium text-white text-balance">
+        <h1 class="main-heading text-4xl md:text-6xl leading-[1.4] font-intro font-medium text-white text-balance">
           <span v-if="firstWord" class="first-word">{{ firstWord }}</span>
           {{ restOfTitle }}
         </h1>

@@ -21,10 +21,10 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
 </script>
 
 <template>
-  <section class="relative py-24 bg-white">
+  <section class="relative py-10 md:py-24 bg-white">
     <div class="container">
       <div class="flex flex-col gap-4 mb-12">
-        <h2 class="heading relative text-3xl uppercase font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
+        <h2 class="heading relative text-2xl md:text-3xl font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
         <div class="max-w-2xl text-base font-light" v-if="description" v-html="htmlDescription"></div>
       </div>
       <app-tabs>
@@ -34,7 +34,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
             :label="tab?.label"
             :slug="tab?.slug"
         >
-          <div class="grid grid-cols-2 gap-10">
+          <div class="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-10">
             <div class="h-full">
               <app-slider>
                 <app-image
@@ -45,7 +45,7 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
                 />
               </app-slider>
             </div>
-            <div class="h-full py-4">
+            <div class="h-full py-4 flex flex-col items-start justify-start">
               <div v-html="richTextToHtml(tab?.content)" />
 
               <base-app-button

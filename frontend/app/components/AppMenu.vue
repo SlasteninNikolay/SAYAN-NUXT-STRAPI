@@ -100,13 +100,13 @@ const throttle = (func, limit) => {
 <template>
   <nav
       v-if="menuData && Array.isArray(menuData) && menuData.length > 0"
-      class="fixed top-0 left-0 w-full h-[74px] transition-all duration-500 z-50"
+      class="fixed top-0 left-0 w-full transition-all duration-500 z-50"
       :class="[
       'fixed top-0 w-full transition-all ease-in-out',
       isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
     ]"
   >
-    <div class="container-full mx-auto px-4 transition-all duration-300"
+    <div class="container-full  mx-auto px-4 pt-4 md:pt-0 transition-all duration-300"
          :class="[atTop ? 'bg-primary' : 'bg-primary']"
     >
       <!-- Десктопное меню -->
@@ -137,7 +137,7 @@ const throttle = (func, limit) => {
               <NuxtLink
                   v-if="item.__component === 'menu.ssylka'"
                   :to="item.url"
-                  class="px-3 py-2 text-secondary hover:text-secondary-300 hover:transition-colors duration-200"
+                  class="px-3 py-2 text-lg text-secondary hover:text-secondary-300 hover:transition-colors duration-200"
               >
                 {{ item.title }}
               </NuxtLink>
@@ -159,7 +159,7 @@ const throttle = (func, limit) => {
                   </svg>
                 </button>
                 <ul
-                    class="absolute left-0 mt-1 w-48 bg-white shadow-lg rounded-md py-1 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+                    class="absolute left-0 mt-1 w-48 bg-primary shadow-lg rounded-md py-1 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
                 >
                   <li v-for="section in item.sections" :key="section.id" class="px-2 py-1">
                     <ul class="space-y-1">
@@ -188,7 +188,7 @@ const throttle = (func, limit) => {
                 :is="item.type === 'link' ? 'a' : 'button'"
                 :href="item.type === 'link' ? item.url : undefined"
                 type="button"
-                class="btn-fill-up relative overflow-hidden inline-flex items-center px-4 py-2"
+                class="btn-fill-up relative overflow-hidden inline-flex items-center px-4"
                 :class="[
       item.type === 'primary'
         ? 'bg-primary-500 text-white rounded-2xl border border-primary transition-all duration-300 group hover:border-secondary-600'
@@ -210,12 +210,10 @@ const throttle = (func, limit) => {
       </div>
 
       <!-- Мобильное меню -->
-      <div class="container lg:hidden flex items-center justify-between py-4">
+      <!-- Бургер и логотип -->
+      <div class="container lg:hidden flex items-center justify-between">
         <!-- Логотип -->
-        <NuxtLink
-            v-if="logo"
-            to="/"
-        >
+        <NuxtLink v-if="logo" to="/">
           <img
               :src="`${strapiUrl}${logo?.url || ''}`"
               :alt="logo?.alt || 'Логотип'"
@@ -226,11 +224,10 @@ const throttle = (func, limit) => {
               decoding="async"
           />
         </NuxtLink>
-
         <!-- Бургер-кнопка -->
         <button
             @click="openMobileMenu"
-            class="p-2 rounded-md text-primary-500 hover:text-primary-700 hover:bg-primary-50 focus:outline-none"
+            class="p-2 rounded-md text-secondary focus:outline-none"
         >
           <svg
               class="h-6 w-6"
@@ -249,81 +246,108 @@ const throttle = (func, limit) => {
         </button>
       </div>
 
-      <!-- Мобильное меню (раскрывающееся) -->
+      <!-- Мобильное меню -->
       <div
-          v-if="isMobileMenuOpen"
-          class="lg:hidden pb-4 transition-all duration-300 h-svh overflow-y-scroll"
+          class="mobile-menu-transition lg:hidden bg-primary pb-4 overflow-y-scroll h-svh"
+          :class="isMobileMenuOpen ? 'menu-open' : 'menu-closed'"
       >
-        <ul class="space-y-2 pb-14">
-          <li v-for="item in menuData" :key="item.id">
-            <template v-if="item.__component !== 'menu.logo'">
-              <!-- Обычная ссылка -->
-              <a
-                  v-if="item.__component === 'menu.ssylka'"
-                  :href="item.url"
-                  class="block px-0 py-2 text-primary-500 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200"
-              >
-                {{ item.title }}
-              </a>
-
-              <!-- Выпадающее меню -->
-              <div v-else-if="item.__component === 'menu.vypadayushhee-menyu'">
-                <button
-                    @click="toggleSubMenu(item.id)"
-                    class="flex items-center justify-between w-full py-2 text-primary-500 hover:text-primary-700 hover:bg-primary-50 rounded transition-colors duration-200"
+        <div class="container h-full flex flex-col py-10 items-start justify-evenly">
+         <h2 class="text-secondary/50">Отель Славянка</h2>
+          <ul class="space-y-2 pb-14 border-t-1 border-secondary-100">
+            <li v-for="item in menuData" :key="item.id">
+              <template v-if="item.__component !== 'menu.logo'">
+                <!-- Обычная ссылка -->
+                <a
+                    v-if="item.__component === 'menu.ssylka'"
+                    :href="item.url"
+                    class="block px-0 py-2 text-xl md:text-2xl font-medium text-secondary transition-colors duration-200"
+                    @click="closeMobileMenu"
                 >
                   {{ item.title }}
-                  <svg
-                      :class="['w-4 h-4 ml-1 transition-transform duration-200',
-                isSubMenuOpen(item.id) ? 'rotate-180' : '']"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                </a>
+
+                <!-- Выпадающее меню -->
+                <div v-else-if="item.__component === 'menu.vypadayushhee-menyu'">
+                  <button
+                      @click="toggleSubMenu(item.id)"
+                      class="flex items-center justify-between w-full py-2 text-secondary transition-colors duration-200"
                   >
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                  </svg>
-                </button>
-
-                <div
-                    class="overflow-hidden transition-all duration-300 ease-in-out"
-                    :class="isSubMenuOpen(item.id) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'"
-                >
-                  <ul class="pl-4 mt-1 space-y-1">
-                    <li v-for="section in item.sections" :key="section.id">
-                      <ul class="space-y-1">
-                        <li v-for="link in section.links" :key="link.id">
-                          <a
-                              :href="link.url"
-                              class="block px-3 py-2 text-sm text-primary-500 hover:bg-primary-50 hover:text-primary-700 rounded transition-colors duration-200"
-                              @click="closeMobileMenu"
-                          >
-                            {{ link.title }}
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                    {{ item.title }}
+                    <svg
+                        :class="['w-4 h-4 ml-1 transition-transform duration-200', isSubMenuOpen(item.id) ? 'rotate-180' : '']"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                  </button>
+                  <div
+                      class="overflow-hidden transition-all duration-300 ease-in-out"
+                      :class="isSubMenuOpen(item.id) ? 'submenu-open' : 'submenu-closed'"
+                  >
+                    <ul class="pl-4 mt-1 space-y-1">
+                      <li v-for="section in item.sections" :key="section.id">
+                        <ul class="space-y-1">
+                          <li v-for="link in section.links" :key="link.id">
+                            <a
+                                :href="link.url"
+                                class="block px-3 py-2 text-lg text-primary-500 hover:bg-primary-50 hover:text-primary-700 rounded transition-colors duration-200"
+                                @click="closeMobileMenu"
+                            >
+                              {{ link.title }}
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
 
-              <!-- Кнопка -->
-              <a
-                  v-else-if="item.__component === 'menu.knopka'"
-                  :href="item.url"
-                  :class="[
-                  `flex items-center gap-1 py-2 rounded transition-colors duration-200`,
-                  item.type === 'primary' ? 'bg-blue-500 text-white hover:bg-blue-600' : 'text-primary-500 hover:bg-gray-300'
-                ]"
-              >
-                <Icon
-                    name="solar:phone-broken"
-                    class="text-xl transition-colors duration-200"
-                    :class="item.type === 'primary' ? 'text-white' : 'text-primary-500 group-hover:text-white'"
-                />&nbsp;{{ item.title }}
-              </a>
-            </template>
-          </li>
-        </ul>
+                <!-- Кнопка -->
+                <a
+                    v-else-if="item.__component === 'menu.knopka'"
+                    :href="item.url"
+                    :class="[
+              `flex items-center gap-1 py-2 rounded transition-colors duration-200`,
+              item.type === 'primary' ? 'bg-blue-500 text-white hover:bg-blue-600' : 'text-primary-500 hover:bg-gray-300'
+            ]"
+                >
+                  <Icon
+                      name="solar:phone-broken"
+                      class="text-xl transition-colors duration-200"
+                      :class="item.type === 'primary' ? 'text-white' : 'text-primary-500 group-hover:text-white'"
+                  />&nbsp;{{ item.title }}
+                </a>
+              </template>
+            </li>
+          </ul>
+          <div class="flex flex-col gap-2">
+            <component
+                v-for="item in (menuData || []).filter(item => item.__component === 'menu.knopka')"
+                :key="item.id"
+                :is="item.type === 'link' ? 'a' : 'button'"
+                :href="item.type === 'link' ? item.url : undefined"
+                type="button"
+                class="btn-fill-up relative overflow-hidden inline-flex items-center py-2"
+                :class="[
+      item.type === 'primary'
+        ? 'bg-primary-500 text-white rounded-2xl border border-primary transition-all duration-300 group hover:border-secondary-600'
+        : 'bg-transparent text-secondary hover:text-secondary-300 hover:transition-colors duration-200',
+    ]"
+                @click="item.type !== 'link' && typeof item.onClick === 'function' ? item.onClick : null"
+            >
+              <span class="absolute inset-x-0 bottom-0 h-0 bg-secondary-600 transition-all duration-300 group-hover:h-full"></span>
+              <Icon
+                  name="solar:phone-broken"
+                  class="relative me-2 z-10 text-xl transition-colors duration-300"
+                  :class="item.type === 'primary' ? 'text-white' : 'text-secondary group-hover:text-white'"
+              />
+              <span class="text-lg relative z-10 transition-colors duration-300 group-hover:text-white">{{ item.title }}</span>
+            </component>
+            <span class="text-sm text-secondary/50">г. Саяногорск, Центральный мкр.,50</span>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -332,5 +356,30 @@ const throttle = (func, limit) => {
 <style>
 .my-icon :deep(path) {
   fill: currentColor;
+}
+
+.mobile-menu-transition {
+  transition-property: max-height, opacity;
+  transition-duration: 0.5s;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+.menu-open {
+  max-height: 1000px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.submenu-open {
+  max-height: 500px;
+  opacity: 1;
+}
+.submenu-closed {
+  max-height: 0 !important;
+  opacity: 0.2;
 }
 </style>

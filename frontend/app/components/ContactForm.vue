@@ -20,9 +20,6 @@ const onSubmit = async (values, { resetForm }) => {
   loading.value = true
   message.value = ''
   try {
-    // Здесь должна быть отправка данных через fetch/axios
-    // например:
-    // await axios.post('/api/feedback', values)
     message.value = 'Спасибо, ваша заявка отправлена!'
     messageType.value = 'success'
     resetForm()

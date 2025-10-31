@@ -72,6 +72,9 @@ const loadBlockComponent = (componentType) => {
     'page.blok-s-kontaktami': defineAsyncComponent(() =>
       import('@/components/blocks/ContactsBlock.vue')
   ),
+    'page.blok-odnokolonochnyj-tekst': defineAsyncComponent(() =>
+        import('@/components/blocks/TextBlock.vue')
+    ),
   }
   return componentMap[componentType] || null
 }

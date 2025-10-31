@@ -84,7 +84,7 @@ const getImageSrc = computed(() => {
     return '/placeholder-image.jpg'
   }
 
-  const imagePath = props.image.formats?.thumbnail?.url || props.image.url
+  const imagePath = props.image.formats?.large?.url || props.image.url
   return getImageUrl(imagePath)
 })
 

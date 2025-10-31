@@ -153,6 +153,18 @@ export interface PageBlokObratnayaSvyaz extends Struct.ComponentSchema {
   };
 }
 
+export interface PageBlokOdnokolonochnyjTekst extends Struct.ComponentSchema {
+  collectionName: 'components_page_blok_odnokolonochnyj_tekst';
+  info: {
+    displayName: '\u0411\u043B\u043E\u043A \u043E\u0434\u043D\u043E\u043A\u043E\u043B\u043E\u043D\u043E\u0447\u043D\u044B\u0439 \u0442\u0435\u043A\u0441\u0442';
+    icon: 'bulletList';
+  };
+  attributes: {
+    header: Schema.Attribute.Component<'page.zagolovok', false>;
+    text: Schema.Attribute.Blocks;
+  };
+}
+
 export interface PageBlokOrganizacziyaMeropriyatij
   extends Struct.ComponentSchema {
   collectionName: 'components_page_blok_organizacziya_meropriyatij';
@@ -503,6 +515,7 @@ declare module '@strapi/strapi' {
       'page.blok-dvuhkolonochnyj-tekst': PageBlokDvuhkolonochnyjTekst;
       'page.blok-o-lokaczii': PageBlokOLokaczii;
       'page.blok-obratnaya-svyaz': PageBlokObratnayaSvyaz;
+      'page.blok-odnokolonochnyj-tekst': PageBlokOdnokolonochnyjTekst;
       'page.blok-organizacziya-meropriyatij': PageBlokOrganizacziyaMeropriyatij;
       'page.blok-restoran': PageBlokRestoran;
       'page.blok-s-kartoj': PageBlokSKartoj;

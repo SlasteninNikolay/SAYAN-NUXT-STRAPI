@@ -3,7 +3,7 @@
       :is="tag"
       :href="url"
       :type="tag === 'button' ? nativeType : undefined"
-      class="btn-fill-up relative overflow-hidden inline-flex items-center justify-center gap-2 px-4 py-2 rounded-2xl border transition-all duration-300 group"
+      class="btn-fill-up relative overflow-hidden inline-flex items-center justify-center gap-2 px-2 py-1 lg:px-4 lg:py-2 rounded-2xl border transition-all duration-300 group"
       :class="[
       buttonClasses,
       sizeClasses,
@@ -20,7 +20,7 @@
     <Icon
         v-if="icon"
         :name="icon"
-        class="relative z-10 text-xl text-medium transition-colors duration-300"
+        class="relative z-10 text-xl font-medium transition-colors duration-300"
         :class="iconClasses"
     />
 
@@ -92,10 +92,10 @@ const tag = computed(() => props.url ? 'a' : 'button')
 // Классы для разных типов кнопок
 const buttonClasses = computed(() => {
   const classes = {
-    primary: 'border-primary bg-primary-500 text-medium text-white hover:border-primary-300',
-    secondary: 'border-secondary bg-secondary-500 text-medium text-white hover:border-secondary-600',
-    outline: 'border-primary bg-transparent text-primary-500 text-medium hover:border-primary-300',
-    ghost: 'border-transparent bg-transparent text-primary-500 text-medium hover:bg-gray-100'
+    primary: 'border-primary bg-primary-500 font-medium text-white hover:border-primary-300',
+    secondary: 'border-secondary bg-secondary-500 font-medium text-white hover:border-secondary-600',
+    outline: 'border-primary bg-transparent text-primary-500 font-medium hover:border-primary-300',
+    ghost: 'border-transparent bg-transparent text-primary-500 font-medium hover:bg-gray-100'
   }
   return classes[props.type] || classes.primary
 })
@@ -103,9 +103,9 @@ const buttonClasses = computed(() => {
 // Классы для разных размеров
 const sizeClasses = computed(() => {
   const classes = {
-    small: 'px-3 py-1.5 text-sm rounded-xl',
-    medium: 'px-4 py-1.8 rounded-2xl',
-    large: 'px-6 py-3 text-lg rounded-2xl'
+    small: 'px-2 py-2 lg:px-3 lg:py-1.5 text-sm rounded-xl',
+    medium: 'px-1.5 py-1.2 lg:px-4 lg:py-1.8 rounded-2xl',
+    large: 'px-3 py-2 lg:px-6 lg:py-3 text-lg rounded-2xl'
   }
   return classes[props.size] || classes.medium
 })
@@ -124,7 +124,7 @@ const textClasses = computed(() => {
     return 'text-white'
   }
   if (props.type === 'secondary') {
-    return 'text-white/90 text-medium text-base'
+    return 'text-white/80 font-medium text-base'
   }
   return `text-primary-500 group-hover:text-white`
 })

@@ -10,10 +10,10 @@ const htmlDescription = computed(() => richTextToHtml(props.description))
 </script>
 
 <template>
-  <section class="relative py-24 overflow-hidden">
+  <section class="relative py-10 md:py-24 overflow-hidden">
     <div class="map-section container">
-      <div class="flex flex-col gap-4 mb-12">
-        <h2 class="heading relative text-3xl uppercase font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
+      <div class="flex flex-col gap-4 mb-6 md:mb-12">
+        <h2 class="heading relative text-2xl md:text-3xl font-etude font-medium text-primary text-balance">{{ header?.title }}</h2>
         <div class="max-w-2xl text-base font-light" v-if="description" v-html="htmlDescription"></div>
       </div>
       <div class="w-full border-[10px] border-white rounded-2xl overflow-hidden">

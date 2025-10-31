@@ -78,21 +78,28 @@ const loadData = async () => {
     // SEO мета-теги
     if (result?.data?.[0]) {
       const page = result.data[0]
-      const title = page.SEO?.metaTitle || page.title || 'LEGENDA Camps'
-      const description = page.SEO?.metaDescription || 'Детский лагерь на Черном море'
+
+      const title = page.SEO?.metaTitle || page.title || 'Отель Славянка Саяногорск'
+      const description = page.SEO?.metaDescription || 'Одна из лучших гостиниц в Хакасии в самом сердце Саяногорска'
+      const image = page.SEO?.metaImage || '/images/slavyanka-sayanogors.jpg'
+      const url = `https://slavyanka-sayanogorsk.ru/${page.slug}`
 
       useSeoMeta({
         title,
         description,
         ogTitle: title,
         ogDescription: description,
+        ogType: 'website',
+        ogUrl: url,
+        ogImage: image,
+        twitterCard: 'summary_large_image',
+        twitterImage: image
       })
     }
   } catch (err) {
     console.error('Ошибка при загрузке:', err)
     error.value = err.message || 'Не удалось загрузить страницу'
   } finally {
-    console.log('СКРЫТЬ loader');
     endTransition()
   }
 }
@@ -115,8 +122,8 @@ watch(() => route.params.slug, () => {
 
 // Мета по умолчанию
 useSeoMeta({
-  title: 'Загрузка...',
-  description: 'Страница загружается'
+  title: 'Отель Славянка Саяногорск',
+  description: 'Одна из лучших гостиниц в Хакасии в самом сердце Саяногорска'
 })
 
 definePageMeta({

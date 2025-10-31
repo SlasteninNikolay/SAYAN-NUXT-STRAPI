@@ -15,18 +15,19 @@ const htmlRoomDescription = computed(() => richTextToHtml(props.room?.descriptio
 </script>
 
 <template>
-  <div class="grid grid-cols-5 gap-16">
+  <div class="flex flex-col md:grid md:grid-cols-5 gap-10 md:gap-16 pt-14 border-t border-primary-50 first:border-t-0 first:pt-0">
     <div class="col-span-2">
-      <app-slider class="h-full max-h-96 rounded-lg overflow-hidden">
+      <app-slider class="h-full max-h-60 md:max-h-96 rounded-lg overflow-hidden">
         <app-slider-image
           v-for="(photo, index) in room.photos"
           :key="photo.id"
           :src="getStrapiMedia(photo.url)"
           :alt="photo.alternativeText"
+          imgClass="max-h-60 md:max-h-96"
         />
       </app-slider>
     </div>
-    <div class="col-span-3 flex flex-col justify-between">
+    <div class="col-span-3 flex flex-col gap-6 md:gap-0 justify-between">
       <h3 class="text-2xl text-primary font-medium font-etude">{{ room?.title }}</h3>
       <div class="grid grid-cols-[minmax(100px,_300px)_minmax(100px,_300px)] gap-2">
         <div v-for="(item, index) in room?.features" :key="index" class="flex items-center gap-2">

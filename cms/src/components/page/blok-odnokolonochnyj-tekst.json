@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_blok_odnokolonochnyj_tekst",
+  "info": {
+    "displayName": "Блок одноколоночный текст",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "page.zagolovok",
+      "repeatable": false
+    },
+    "text": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

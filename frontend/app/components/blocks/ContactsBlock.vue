@@ -9,12 +9,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="relative py-24 overflow-hidden">
+  <section class="relative py-10 md:py-24 overflow-hidden">
     <div class="container">
       <object class="absolute w-64 top-0 translate-y-1/2 left-1/2 -translate-x-1/2 -z-10 opacity-10" type="image/svg+xml" data="/images/svg/pane.svg"></object>
-      <div class="grid grid-cols-2 gap-16">
+      <div class="flex md:grid flex-col md:grid-cols-2 gap-10 md:gap-16">
         <div class="flex flex-col gap-5 text-balance justify-self-end w-full">
-          <h2 class="heading relative text-3xl uppercase font-etude font-medium text-primary text-balance mb-8">{{ header?.title }}</h2>
+          <h2 class="heading relative text-2xl md:text-3xl uppercase font-etude font-medium text-primary text-balance mb-4 md:mb-8">{{ header?.title }}</h2>
           <div v-for="(item, index) in contacts" :key="index" class="flex items-center gap-4 mt-2">
             <img :src="getStrapiMedia(item?.icon.url)" class="w-6 h-6 text-primary-500" :alt="item.title" :title="item.title" />
             <a v-if="item?.link" :href="item?.link">{{ item.title }}</a>
