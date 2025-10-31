@@ -16,9 +16,7 @@
 
 <script setup>
 import BlockManager from "~/components/BlockManager.vue";
-import { usePageTransition } from '~/composables/usePageTransition'
 
-const { startTransition, endTransition } = usePageTransition()
 const route = useRoute()
 const { find } = useStrapi()
 
@@ -99,20 +97,12 @@ const loadData = async () => {
   } catch (err) {
     console.error('Ошибка при загрузке:', err)
     error.value = err.message || 'Не удалось загрузить страницу'
-  } finally {
-    endTransition()
   }
 }
 
-onNuxtReady(() => {
-  startTransition()
-})
-
 // Загружать при монтировании
 onMounted(() => {
-  setTimeout(() => {
-    loadData()
-  }, 600)
+  loadData()
 })
 
 // Загружать при изменении slug

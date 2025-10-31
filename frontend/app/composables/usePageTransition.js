@@ -1,4 +1,3 @@
-// app/composables/usePageTransition.js
 import { ref } from 'vue'
 
 const isTransitioning = ref(false)
@@ -6,29 +5,28 @@ const loadingProgress = ref(0)
 let timer = null
 
 function startTransition() {
-    clearInterval(timer)
     isTransitioning.value = true
-    loadingProgress.value = 0 // сброс только здесь!
-    if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'hidden'
-    }
+    loadingProgress.value = 0
+
+    if (timer) clearInterval(timer)
     timer = setInterval(() => {
         if (loadingProgress.value < 90) {
-            loadingProgress.value = Math.min(90, loadingProgress.value + 1)
+            loadingProgress.value += 5
         }
-    }, 120)
+    }, 1000)
+
+    console.log(loadingProgress.value)
 }
 
 function endTransition() {
-    clearInterval(timer)
     loadingProgress.value = 100
     setTimeout(() => {
         isTransitioning.value = false
-        if (typeof document !== 'undefined') {
-            document.body.style.overflow = ''
-        }
-        // НЕ СБРАСЫВАТЬ loadingProgress.value = 0 здесь!
-    }, 1000)
+        loadingProgress.value = 0
+        clearInterval(timer)
+    }, 400)
+
+    console.log(loadingProgress.value)
 }
 
 export function usePageTransition() {
@@ -36,6 +34,6 @@ export function usePageTransition() {
         isTransitioning,
         loadingProgress,
         startTransition,
-        endTransition
+        endTransition,
     }
 }

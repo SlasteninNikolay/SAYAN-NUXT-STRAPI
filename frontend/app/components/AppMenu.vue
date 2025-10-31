@@ -94,7 +94,6 @@ const throttle = (func, limit) => {
     }
   }
 }
-
 </script>
 
 <template>
@@ -248,7 +247,7 @@ const throttle = (func, limit) => {
 
       <!-- Мобильное меню -->
       <div
-          class="mobile-menu-transition lg:hidden bg-primary pb-4 overflow-y-scroll h-svh"
+          class="mobile-menu-transition lg:hidden bg-primary pb-4 overflow-y-scroll h-screen"
           :class="isMobileMenuOpen ? 'menu-open' : 'menu-closed'"
       >
         <div class="container h-full flex flex-col py-10 items-start justify-evenly">
